@@ -39,7 +39,15 @@ module Enumerable
     false
   end
 
-  def my_none?; end
+  def my_none?
+    i = 0
+    while i < length
+      return false if yield self[i]
+
+      i += 1
+    end
+    true
+  end
 
   def my_count?; end
 
