@@ -74,7 +74,14 @@ module Enumerable
     list
   end
 
-  def my_inject; end
+  def my_inject(acc = self[0])
+    i = 0
+    while i < length
+      acc = yield(acc, self[i])
+      i += 1
+    end
+    acc
+  end
 end
 
 # You will first have to define my_each
