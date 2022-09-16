@@ -18,6 +18,26 @@ module Enumerable
     end
     list
   end
+
+  def my_all?
+    i = 0
+    while i < length
+      return false unless yield self[i]
+
+      i += 1
+    end
+    true
+  end
+
+  def my_any?; end
+
+  def my_none?; end
+
+  def my_count?; end
+
+  def my_map; end
+
+  def my_inject; end
 end
 
 # You will first have to define my_each
