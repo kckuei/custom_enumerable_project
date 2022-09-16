@@ -63,7 +63,16 @@ module Enumerable
     end
   end
 
-  def my_map; end
+  def my_map
+    i = 0
+    list = []
+    while i < length
+      val = yield self[i]
+      list << val
+      i += 1
+    end
+    list
+  end
 
   def my_inject; end
 end
