@@ -8,6 +8,16 @@ module Enumerable
     end
     self
   end
+
+  def my_select
+    i = 0
+    list = []
+    while i < length
+      list << self[i] if yield self[i]
+      i += 1
+    end
+    list
+  end
 end
 
 # You will first have to define my_each
