@@ -29,7 +29,15 @@ module Enumerable
     true
   end
 
-  def my_any?; end
+  def my_any?
+    i = 0
+    while i < length
+      return true if yield self[i]
+
+      i += 1
+    end
+    false
+  end
 
   def my_none?; end
 
