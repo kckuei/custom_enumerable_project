@@ -49,7 +49,19 @@ module Enumerable
     true
   end
 
-  def my_count?; end
+  def my_count
+    i = 0
+    if block_given?
+      counts = 0
+      while i < length
+        counts += 1 if yield self[i]
+        i += 1
+      end
+      counts
+    else
+      length
+    end
+  end
 
   def my_map; end
 
